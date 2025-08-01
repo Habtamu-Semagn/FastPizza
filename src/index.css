@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@layer components {
+  .input {
+    border-radius: 9999px;
+    border: 1px solid #e7e5e4;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    transition: all 0.3s;
+    color: #1c1917;
+  }
+
+  .input::placeholder {
+    color: #a8a29e;
+  }
+
+  .input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.5);
+  }
+
+  @media (min-width: 768px) {
+    .input {
+      padding: 0.75rem 1.5rem;
+    }
+  }
+
+  /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+  .loader {
+    width: 45px;
+    aspect-ratio: 0.75;
+    --c: no-repeat linear-gradient(#292524 0 0);
+    background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+    background-size: 20% 50%;
+    animation: loading 1s infinite linear;
+  }
+
+  @keyframes loading {
+    20% {
+      background-position: 0% 0%, 50% 50%, 100% 50%;
+    }
+    40% {
+      background-position: 0% 100%, 50% 0%, 100% 50%;
+    }
+    60% {
+      background-position: 0% 50%, 50% 100%, 100% 0%;
+    }
+    80% {
+      background-position: 0% 50%, 50% 50%, 100% 100%;
+    }
+  }
+}
